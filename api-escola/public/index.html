@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Escola</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-content">
+      <div>
+        <p class="badge">Painel da API</p>
+        <h1>API Escola</h1>
+        <p>Gerencie cursos e alunos em uma interface conectada diretamente aos endpoints.</p>
+      </div>
+      <button id="refresh-all" class="btn btn-secondary" type="button">Atualizar tudo</button>
+    </div>
+  </header>
+
+  <main class="container app-grid">
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Cursos</h2>
+      </div>
+
+      <form id="curso-form" class="form-grid">
+        <label>
+          Nome do curso
+          <input id="curso-nome" name="nome" type="text" placeholder="Ex.: Desenvolvimento Web" required />
+        </label>
+        <button class="btn btn-primary" type="submit">Cadastrar curso</button>
+      </form>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="cursos-list"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Alunos</h2>
+      </div>
+
+      <form id="aluno-form" class="form-grid">
+        <label>
+          Nome
+          <input id="aluno-nome" name="nome" type="text" placeholder="Ex.: Ana Souza" required />
+        </label>
+        <label>
+          E-mail
+          <input id="aluno-email" name="email" type="text" placeholder="Ex.: aluno@email.com" required />
+        </label>
+        <label>
+          Curso
+          <select id="aluno-curso" name="curso_id" required>
+            <option value="">Selecione um curso</option>
+          </select>
+        </label>
+        <button class="btn btn-primary" type="submit">Cadastrar aluno</button>
+      </form>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Curso</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="alunos-list"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
